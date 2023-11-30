@@ -1,11 +1,10 @@
 import os
-import time
 import requests
 import sys
 
 
 def code_html():
-    for year in range(2013,2019):
+    for year in range(2013,2019): # data from 2013-2018 included
         for month in range(1,13):
             if(month<10):
                 url='http://en.tutiempo.net/climate/0{}-{}/ws-421820.html'.format(month,year)  #for month 1-9
@@ -20,6 +19,6 @@ def code_html():
                 output.write(text_utf)
             
         sys.stdout.flush()
-
-code_html()
+if __name__=="__main__":
+    code_html()
         
